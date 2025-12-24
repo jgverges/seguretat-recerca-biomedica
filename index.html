@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Seguretat de Dades en Recerca Biomèdica</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      /* Estil especial per Acció Urgent */
+      .grid-item-urgent {
+        background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+        color: white;
+        border: 3px solid #a71d2a;
+        box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+        transform: scale(1.05);
+      }
+
+      .grid-item-urgent:hover {
+        background: linear-gradient(135deg, #c82333 0%, #bd2130 100%);
+        transform: scale(1.08);
+        box-shadow: 0 6px 20px rgba(220, 53, 69, 0.6);
+      }
+
+      .grid-item-urgent .icon {
+        font-size: 3em;
+        animation: pulse 2s infinite;
+      }
+
+      .grid-item-urgent h3 {
+        color: white;
+        font-size: 1.3em;
+      }
+
+      .grid-item-urgent p {
+        color: rgba(255, 255, 255, 0.95);
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -13,47 +53,38 @@
         <p>Protegeix la teva recerca mentre utilitzes eines d''IA</p>
       </header>
 
-      <div class="alert alert-danger" style="text-align: center">
-        <h2 style="margin: 0 0 10px 0; border: none; color: #a00">
-          ⚠️ Fas servir Google Drive o Email sense xifrar per dades sensibles?
-        </h2>
-        <p style="font-size: 1.1em; margin: 10px 0">
-          Tens una vulnerabilitat CRÍTICA que has de resoldre AVUI
-        </p>
-        <a href="guia/inici/accio-urgent.html" class="btn btn-danger"
-          >🚨 ACCIÓ URGENT (30 min)</a
-        >
-      </div>
-
       <h2>⚡ Comença aquí</h2>
 
       <div class="grid">
-        <a href="guia/inici/accio-urgent.html" class="grid-item">
+        <!-- 1. ACCIÓ URGENT (destacat) -->
+        <a
+          href="guia/inici/accio-urgent.html"
+          class="grid-item grid-item-urgent"
+        >
           <div class="icon">🚨</div>
-          <h3>Acció Urgent</h3>
-          <p>
-            Si fas servir Drive/Email sense xifrar<br /><strong
-              >30 minuts AVUI</strong
-            >
-          </p>
+          <h3>⚠️ ACCIÓ URGENT</h3>
+          <p>Drive/Email sense xifrar?<br /><strong>30 minuts AVUI</strong></p>
         </a>
 
+        <!-- 2. 7 RISCOS PRINCIPALS -->
+        <a href="guia/fonaments/riscos-generals.html" class="grid-item">
+          <div class="icon">📚</div>
+          <h3>7 Riscos Principals</h3>
+          <p>Contextualització completa<br /><strong>10 min lectura</strong></p>
+        </a>
+
+        <!-- 3. CAS HOSPITAL CLÍNIC (NOVA SECCIÓ) -->
+        <a href="guia/fonaments/cas-hospital-clinic.html" class="grid-item">
+          <div class="icon">📰</div>
+          <h3>Cas Real: Hospital Clínic</h3>
+          <p>Ciberatac 2023<br /><strong>Què va passar</strong></p>
+        </a>
+
+        <!-- 4. TUTORIAL CURSOR -->
         <a href="guia/eines/cursor-analisi.html" class="grid-item">
           <div class="icon">💡</div>
           <h3>Puc usar Cursor?</h3>
           <p>Veredicte clar<br /><strong>SÍ amb protocol</strong></p>
-        </a>
-
-        <a href="guia/protocols/xifrat-drive.html" class="grid-item">
-          <div class="icon">🔐</div>
-          <h3>Tutorial 7-Zip</h3>
-          <p>Xifra arxius<br /><strong>Pas a pas</strong></p>
-        </a>
-
-        <a href="guia/fonaments/riscos-generals.html" class="grid-item">
-          <div class="icon">📚</div>
-          <h3>7 Riscos Principals</h3>
-          <p>Context complet<br /><strong>10 min lectura</strong></p>
         </a>
       </div>
 
@@ -81,6 +112,22 @@
       </div>
 
       <div class="card">
+        <h3>📖 Fonaments</h3>
+        <ul>
+          <li>
+            <a href="guia/fonaments/riscos-generals.html"
+              >7 Riscos principals en recerca</a
+            >
+          </li>
+          <li>
+            <a href="guia/fonaments/cas-hospital-clinic.html"
+              >Cas Real: Hospital Clínic Barcelona 2023</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
         <h3>💡 Eines d''IA - Veredictes</h3>
         <ul>
           <li>
@@ -96,22 +143,6 @@
           <li>
             <a href="guia/eines/eines-locals.html"
               >FlowJo, Prism, Zotero (SEGURES)</a
-            >
-          </li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>📖 Fonaments</h3>
-        <ul>
-          <li>
-            <a href="guia/fonaments/riscos-generals.html"
-              >7 Riscos principals en recerca</a
-            >
-          </li>
-          <li>
-            <a href="guia/fonaments/cas-hospital-clinic.html"
-              >Cas Real: Hospital Clínic Barcelona 2023</a
             >
           </li>
         </ul>
