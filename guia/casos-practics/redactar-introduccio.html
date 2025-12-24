@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cas Pràctic: Redactar introducció amb Cursor</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💼 Cas Pràctic: Redactar introducció amb Cursor</h1>
+            <p>Exemple complet pas a pas amb prompts segurs</p>
+        </header>
+        <nav>
+            <a href="../../index.html">🏠 Inici</a>
+            <a href="../inici/accio-urgent.html">🚨 Acció Urgent</a>
+            <a href="../eines/cursor-analisi.html">💡 Cursor</a>
+        </nav>
+        <div class="breadcrumb">
+            <a href="../../index.html">Inici</a> &gt; <a href="redactar-introduccio.html">Casos Pràctics</a> &gt; Redactar Introducció
+        </div>
+
+        <h2>🎯 Escenari</h2>
+
+        <div class="card">
+            <p><strong>Situació:</strong> Ets investigadora biomèdica que està redactant la introducció del teu paper sobre senescència cel·lular en pacients amb VIH crònic.</p>
+            
+            <p><strong>Objectiu:</strong> Usar Cursor per ajudar amb l''estructura i redacció, però <strong>sense comprometre la seguretat</strong> de les teves dades.</p>
+            
+            <p><strong>Dades sensibles que tens:</strong></p>
+            <ul>
+                <li>Cohort de 45 pacients VIH+ del teu hospital</li>
+                <li>Resultats preliminars sobre marcadors de senescència</li>
+                <li>Codi d''estudi intern</li>
+            </ul>
+        </div>
+
+        <h2>❌ Forma INCORRECTA (NO fer això)</h2>
+
+        <div class="alert alert-danger">
+            <h3>Prompt arriscat a Cursor:</h3>
+            <pre><code>❌ "Redacta la introducció del meu paper:
+
+La nostra cohort de 45 pacients VIH+ del Hospital Clínic Barcelona
+(codi estudi VIH-SEN-2024) mostra que el 67% presenten nivells 
+elevats de p16INK4a (mitjana 2.4 vs 0.8 en controls, p<0.001).
+
+Els pacients van ser reclutats entre gener 2023 i desembre 2024.
+Tots eren homes, edat mitjana 52 anys, amb càrrega viral indetectable
+durant mínim 5 anys..."</code></pre>
+            
+            <h4>Problemes crítics:</h4>
+            <ul>
+                <li>🔴 Codi d''estudi específic (VIH-SEN-2024)</li>
+                <li>🔴 Institució identificada (Hospital Clínic Barcelona)</li>
+                <li>🔴 Mida exacta de cohort (45)</li>
+                <li>🔴 Resultats específics abans de publicar (67%, p<0.001)</li>
+                <li>🔴 Dates de reclutament</li>
+                <li>🔴 Demografia detallada</li>
+            </ul>
+        </div>
+
+        <h2>✅ Forma CORRECTA (Protocol segur)</h2>
+
+        <h3>Pas 1: Prepara el context (sense dades sensibles)</h3>
+
+        <div class="card">
+            <h4>Prompt segur a Cursor:</h4>
+            <pre><code>✅ "Ajuda''m a redactar la introducció d''un paper científic sobre 
+senescència cel·lular en pacients amb VIH crònic.
+
+CONTEXT GENERAL (basat en literatura publicada):
+- VIH és ara una malaltia crònica gràcies a tractament antiviral
+- Pacients amb VIH mostren envelliment prematur malgrat tractament
+- Senescència cel·lular pot explicar aquest envelliment
+- Marcadors clàssics: p16INK4a, p21, SA-β-gal
+
+ESTRUCTURA QUE NECESSITO:
+1. Context: VIH com a malaltia crònica (2-3 paràgrafs)
+2. Problema: Envelliment prematur malgrat tractament (1-2 paràgrafs)
+3. Mecanisme: Senescència cel·lular (2 paràgrafs)
+4. Gap en literatura: Manca d''estudis sobre duració infecció vs senescència
+5. Objectiu: Analitzar marcadors de senescència en cohort de pacients
+
+NO incloguis resultats específics. Només estructura basada en 
+literatura publicada (2018-2024)."</code></pre>
+        </div>
+
+        <h3>Pas 2: Revisa l''output de Cursor</h3>
+
+        <div class="card">
+            <h4>Cursor generarà quelcom com:</h4>
+            <pre><code>"Human Immunodeficiency Virus (HIV) infection has evolved from 
+a fatal disease to a manageable chronic condition with the advent 
+of highly active antiretroviral therapy (HAART). Despite effective 
+viral suppression, people living with HIV (PLWH) experience 
+accelerated aging and increased risk of age-related comorbidities...
+
+Cellular senescence, characterized by irreversible cell cycle arrest 
+and the secretion of pro-inflammatory factors (SASP), has emerged as 
+a key mechanism underlying premature aging in PLWH. Senescent cells 
+accumulate in various tissues and express markers such as p16INK4a, 
+p21, and senescence-associated β-galactosidase (SA-β-gal)...
+
+However, the relationship between duration of HIV infection and 
+the extent of cellular senescence remains poorly understood...
+
+In this study, we investigated markers of cellular senescence in 
+a cohort of PLWH to elucidate..."</code></pre>
+            
+            <p><strong>✅ Això és segur:</strong> Estructura genèrica basada en literatura publicada</p>
+        </div>
+
+        <h3>Pas 3: Afegeix les teves dades MANUALMENT</h3>
+
+        <div class="card">
+            <h4>Ara, AL TEU DOCUMENT LOCAL (Word/Google Docs offline), afegeix:</h4>
+            <pre><code>"...In this study, we investigated markers of cellular senescence in 
+a cohort of 45 PLWH recruited from [tu hospital] between [dates].
+
+Our findings reveal that 67% of patients exhibited elevated levels 
+of p16INK4a (mean 2.4 vs 0.8 in age-matched controls, p<0.001)..."</code></pre>
+            
+            <p><strong>Important:</strong> Aquestes dades específiques <strong>NO les has posat a Cursor</strong>. Les has afegit després, localment.</p>
+        </div>
+
+        <h3>Pas 4: Refina amb Cursor (si cal)</h3>
+
+        <div class="card">
+            <h4>Si vols millorar la redacció d''una frase específica (sense dades):</h4>
+            <pre><code>✅ "Millora la redacció d''aquesta frase:
+
+''Cellular senescence is characterized by irreversible cell cycle 
+arrest and secretion of inflammatory factors.''
+
+Fes-la més fluida per a una revista d''alt impacte."</code></pre>
+            
+            <p><strong>Cursor podria respondre:</strong></p>
+            <pre><code>"Cellular senescence represents a state of irreversible cell cycle 
+arrest accompanied by the secretion of pro-inflammatory cytokines 
+and growth factors, collectively termed the senescence-associated 
+secretory phenotype (SASP)."</code></pre>
+        </div>
+
+        <h3>Pas 5: Esborra l''historial de Cursor</h3>
+
+        <div class="card">
+            <ol>
+                <li>Obre Cursor → Chat History</li>
+                <li>Selecciona la conversa</li>
+                <li>Delete conversation</li>
+            </ol>
+            <p><strong>Per què:</strong> Tot i que no has posat dades sensibles, és bona pràctica netejar regularment</p>
+        </div>
+
+        <h2>📊 Comparació: Abans vs Després d''usar Cursor</h2>
+
+        <table>
+            <tr>
+                <th>Aspecte</th>
+                <th>Sense Cursor</th>
+                <th>Amb Cursor (protocol segur)</th>
+            </tr>
+            <tr>
+                <td><strong>Temps per redactar introducció</strong></td>
+                <td>4-6 hores</td>
+                <td>2-3 hores (50% més ràpid)</td>
+            </tr>
+            <tr>
+                <td><strong>Qualitat de l''estructura</strong></td>
+                <td>Depèn de la teva experiència</td>
+                <td>Estructura professional consistent</td>
+            </tr>
+            <tr>
+                <td><strong>Risc de filtració</strong></td>
+                <td>🟢 Zero (tot local)</td>
+                <td>🟢 Molt baix (protocol segur)</td>
+            </tr>
+            <tr>
+                <td><strong>Necessitat de revisar literatura</strong></td>
+                <td>🔴 Alta</td>
+                <td>🟡 Moderada (Cursor suggereix estructura, tu verifiques)</td>
+            </tr>
+        </table>
+
+        <h2>💡 Consells addicionals</h2>
+
+        <div class="card">
+            <h3>1. Divideix la introducció en parts</h3>
+            <p><strong>NO demanis a Cursor que escrigui TOTA la introducció d''un cop.</strong> Treballa per seccions:</p>
+            <ul>
+                <li>Conversa 1: Context general VIH</li>
+                <li>Conversa 2: Problema envelliment prematur</li>
+                <li>Conversa 3: Mecanisme senescència</li>
+                <li>Conversa 4: Gap i objectiu</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>2. Usa Cursor per estructura, NO per contingut</h3>
+            <p><strong>Demana ajuda amb:</strong></p>
+            <ul>
+                <li>✅ "Com puc estructurar la introducció?"</li>
+                <li>✅ "Quins elements clau ha d''incloure?"</li>
+                <li>✅ "Com enllaçar el paràgraf 2 amb el 3?"</li>
+            </ul>
+            <p><strong>NO demanis:</strong></p>
+            <ul>
+                <li>❌ "Escriu la introducció amb els meus resultats [...]"</li>
+                <li>❌ "Analitza aquestes dades i crea introducció [...]"</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>3. Verifica SEMPRE les referències</h3>
+            <p>Cursor pot suggerir cites o conceptes. <strong>NO confiïs cegament:</strong></p>
+            <ul>
+                <li>🔍 Verifica totes les cites amb Zotero/Mendeley</li>
+                <li>🔍 Comprova que els conceptes són correctes (Cursor pot "inventar")</li>
+                <li>🔍 Afegeix cites recents (2023-2024) que Cursor pot desconèixer</li>
+            </ul>
+        </div>
+
+        <h2>✅ Checklist final abans de publicar</h2>
+
+        <div class="card">
+            <h3>Abans d''enviar el paper a la revista:</h3>
+            <ul>
+                <li>☑️ He revisat que NO hi ha cap dada sensible al text que vaig posar a Cursor?</li>
+                <li>☑️ He verificat TOTES les referències?</li>
+                <li>☑️ He afegit manualment les meves dades específiques?</li>
+                <li>☑️ He esborrat l''historial de converses de Cursor?</li>
+                <li>☑️ He revisat amb co-autors?</li>
+                <li>☑️ Compleix les normes de la revista sobre ús d''IA? (algunes demanen transparència)</li>
+            </ul>
+        </div>
+
+        <div class="alert alert-success">
+            <h3>🎉 Resultat final</h3>
+            <p><strong>Has estalviat 2-3 hores de feina, tens una introducció ben estructurada, i NO has compromès la seguretat de les teves dades.</strong></p>
+        </div>
+
+        <div class="nav-bottom">
+            <a href="../eines/cursor-analisi.html">← Protocol Cursor</a>
+            <a href="compartir-dades.html">Compartir Dades →</a>
+        </div>
+
+        <footer>
+            <p><a href="../../index.html">🏠 Inici</a> | <a href="../inici/accio-urgent.html">🚨 Acció Urgent</a> | <a href="../eines/cursor-analisi.html">💡 Cursor</a></p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial: Com xifrar amb 7-Zip</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 Tutorial: Com xifrar amb 7-Zip</h1>
+            <p>Guia pas a pas per protegir les teves dades sensibles</p>
+        </header>
+        <nav>
+            <a href="../../index.html">🏠 Inici</a>
+            <a href="../inici/accio-urgent.html">🚨 Acció Urgent</a>
+            <a href="../eines/cursor-analisi.html">💡 Eines</a>
+        </nav>
+        <div class="breadcrumb">
+            <a href="../../index.html">Inici</a> &gt; <a href="../protocols/xifrat-drive.html">Protocols</a> &gt; Xifrat 7-Zip
+        </div>
+
+        <h2>🎯 Què aconseguiràs</h2>
+        <p>Després d'aquest tutorial, sabràs xifrar arxius amb <strong>AES-256</strong> (xifratge militar) perquè <strong>ningú pugui llegir-los sense la teva contrasenya</strong>.</p>
+
+        <h2>📥 Pas 1: Descarregar i instal·lar 7-Zip (5 min)</h2>
+
+        <div class="card">
+            <h3>1.1. Descarrega oficial</h3>
+            <p>Ves a: <a href="https://www.7-zip.org/" target="_blank">https://www.7-zip.org/</a></p>
+            <p>Descarrega la versió <strong>64-bit x64</strong> (més ràpida)</p>
+        </div>
+
+        <div class="card">
+            <h3>1.2. Instal·lació</h3>
+            <ol>
+                <li>Executa l'arxiu descarregat</li>
+                <li>Clica "Install"</li>
+                <li>Espera 10 segons</li>
+                <li>Clica "Close"</li>
+            </ol>
+            <p><strong>✅ Fet! Ara tens 7-Zip al menú contextual (clic dret)</strong></p>
+        </div>
+
+        <h2>🔒 Pas 2: Xifrar el teu primer arxiu (10 min)</h2>
+
+        <div class="card">
+            <h3>2.1. Selecciona l'arxiu</h3>
+            <p>Ves a la carpeta on tens l'arxiu sensible (per exemple: <code>resultats-pacients.xlsx</code>)</p>
+        </div>
+
+        <div class="card">
+            <h3>2.2. Clic dret → 7-Zip → "Add to archive..."</h3>
+            <p>S'obrirà una finestra amb moltes opcions. <strong>Segueix aquests paràmetres EXACTES:</strong></p>
+        </div>
+
+        <div class="card">
+            <h3>2.3. Configuració CRÍTICA</h3>
+            <table>
+                <tr>
+                    <th>Paràmetre</th>
+                    <th>Valor recomanat</th>
+                    <th>Per què</th>
+                </tr>
+                <tr>
+                    <td><strong>Archive format</strong></td>
+                    <td>7z</td>
+                    <td>Suporta AES-256 (més segur)</td>
+                </tr>
+                <tr>
+                    <td><strong>Encryption method</strong></td>
+                    <td>AES-256</td>
+                    <td>Xifratge militar (impossible de trencar)</td>
+                </tr>
+                <tr>
+                    <td><strong>Enter password</strong></td>
+                    <td>Mínim 20 caràcters</td>
+                    <td>Ha d'incloure: majúscules, minúscules, números, símbols</td>
+                </tr>
+                <tr>
+                    <td><strong>Encrypt file names</strong></td>
+                    <td>✅ ACTIVAR</td>
+                    <td>Amaga fins i tot els noms dels arxius</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="alert alert-danger">
+            <h3>⚠️ CRÍTIC: Contrasenya segura</h3>
+            <p><strong>Exemple de contrasenya SEGURA:</strong></p>
+            <pre><code>Vih2024!Recerca#Clinic@Bcn$Segur</code></pre>
+            <p>(34 caràcters, majúscules, minúscules, números, símbols)</p>
+            
+            <p><strong>❌ MAI utilitzis:</strong></p>
+            <ul>
+                <li>Noms propis, dates de naixement</li>
+                <li>Paraules del diccionari</li>
+                <li>Contrasenyes curtes (&lt;15 caràcters)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>2.4. Clica "OK"</h3>
+            <p>7-Zip crearà un arxiu <code>.7z</code> xifrat. Temps estimat:</p>
+            <ul>
+                <li>10 MB → 5-10 segons</li>
+                <li>100 MB → 30-60 segons</li>
+                <li>1 GB → 2-5 minuts</li>
+            </ul>
+        </div>
+
+        <h2>✅ Pas 3: Verificar que funciona (5 min)</h2>
+
+        <div class="card">
+            <h3>3.1. Prova d'obertura</h3>
+            <ol>
+                <li>Fes doble clic a l'arxiu <code>.7z</code> creat</li>
+                <li>7-Zip et demanarà la contrasenya</li>
+                <li>Introdueix-la i verifica que pots veure els arxius</li>
+            </ol>
+            <p><strong>✅ Si funciona → Continua al Pas 4</strong></p>
+            <p><strong>❌ Si no funciona → Repeteix el Pas 2 amb la contrasenya correcta</strong></p>
+        </div>
+
+        <h2>🗑️ Pas 4: Esborrar l'original (CRÍTIC)</h2>
+
+        <div class="alert alert-danger">
+            <h3>⚠️ Aquest pas és IMPRESCINDIBLE</h3>
+            <p>Si no esborre l'arxiu original sense xifrar, tot l'esforç no servirà de res.</p>
+        </div>
+
+        <div class="card">
+            <h3>4.1. Esborrar de forma segura</h3>
+            <ol>
+                <li>Selecciona l'arxiu <strong>original</strong> (NO el .7z)</li>
+                <li>Prem <code>Shift + Supr</code> (esborra permanentment, no va a paperera)</li>
+                <li>Confirma l'esborrat</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>4.2. Si ja estava a Google Drive</h3>
+            <ol>
+                <li>Esborra l'arxiu original de Google Drive</li>
+                <li>Buida la paperera de Drive</li>
+                <li>Puja l'arxiu <code>.7z</code> xifrat</li>
+            </ol>
+        </div>
+
+        <h2>🔄 Ús diari: Com treballar amb arxius xifrats</h2>
+
+        <div class="card">
+            <h3>Flux de treball recomanat</h3>
+            <ol>
+                <li><strong>Descarrega</strong> l'arxiu <code>.7z</code> de Google Drive</li>
+                <li><strong>Desxifra</strong> localment (doble clic → contrasenya)</li>
+                <li><strong>Treballa</strong> amb l'arxiu al teu ordinador</li>
+                <li><strong>Torna a xifrar</strong> amb 7-Zip (Pas 2)</li>
+                <li><strong>Puja</strong> el nou <code>.7z</code> a Drive</li>
+                <li><strong>Esborra</strong> l'arxiu sense xifrar local</li>
+            </ol>
+        </div>
+
+        <h2>❓ Preguntes freqüents</h2>
+
+        <div class="card">
+            <h3>P: Què passa si oblido la contrasenya?</h3>
+            <p><strong>R: NO HI HA MANERA de recuperar l'arxiu.</strong> AES-256 és impossible de trencar sense la contrasenya.</p>
+            <p><strong>Solució:</strong></p>
+            <ul>
+                <li>Guarda la contrasenya en un <strong>gestor de contrasenyes offline</strong> (KeePass)</li>
+                <li>Escriu-la en paper i guarda-la en lloc segur físic</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>P: Puc compartir l'arxiu xifrat amb col·legues?</h3>
+            <p><strong>R: SÍ, però has de compartir la contrasenya per CANAL SEPARAT:</strong></p>
+            <ol>
+                <li>Envia l'arxiu <code>.7z</code> per email/Drive</li>
+                <li>Envia la contrasenya per <strong>SMS</strong> o <strong>WhatsApp</strong> (NO pel mateix email)</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>P: És segur pujar arxius xifrats a Google Drive?</h3>
+            <p><strong>R: SÍ.</strong> Google només veu un arxiu binari incomprensible. No pot llegir el contingut sense la teva contrasenya.</p>
+        </div>
+
+        <div class="nav-bottom">
+            <a href="../inici/accio-urgent.html">← Acció Urgent</a>
+            <a href="email-segur.html">Protocol Email Segur →</a>
+        </div>
+
+        <footer>
+            <p><a href="../../index.html">🏠 Inici</a> | <a href="../inici/accio-urgent.html">🚨 Acció Urgent</a> | <a href="../eines/cursor-analisi.html">💡 Cursor</a></p>
+        </footer>
+    </div>
+</body>
+</html>

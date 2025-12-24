@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor - Anàlisi i Protocol d''Ús Segur</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💡 Cursor - Puc usar-lo?</h1>
+            <p>Veredicte clar i protocol d''ús segur</p>
+        </header>
+
+        <nav>
+            <a href="../../index.html">🏠 Inici</a>
+            <a href="../fonaments/riscos-generals.html">📚 Fonaments</a>
+            <a href="../eines/cursor-analisi.html">💡 Eines</a>
+            <a href="../protocols/xifrat-drive.html">🔐 Protocols</a>
+        </nav>
+
+        <div class="breadcrumb">
+            <a href="../../index.html">Inici</a> &gt; <a href="../eines/cursor-analisi.html">Eines</a> &gt; Cursor
+        </div>
+
+        <div class="alert alert-success" style="text-align: center;">
+            <h2 style="margin: 0 0 10px 0; border: none; color: #155724;">✅ VEREDICTE: SÍ, pots usar Cursor</h2>
+            <p style="font-size: 1.1em;"><strong>Però NOMÉS seguint el protocol de seguretat</strong></p>
+        </div>
+
+        <h2>🎯 Què és Cursor?</h2>
+
+        <p>Cursor és un editor de codi (basat en VS Code) amb IA integrada que pot:</p>
+        <ul>
+            <li>Redactar i estructurar textos científics</li>
+            <li>Corregir i millorar redacció</li>
+            <li>Suggerir millores d''estil</li>
+            <li>Generar contingut basat en instruccions</li>
+        </ul>
+
+        <p><strong>Estalvi de temps estimat: 10-12 hores per paper</strong></p>
+
+        <h2>⚠️ On van les teves dades?</h2>
+
+        <p>Quan uses Cursor:</p>
+        <ul>
+            <li>Es connecta a servidors externs (OpenAI/Anthropic) per processar text</li>
+            <li>Envia el context del que escrius per generar suggeriments</li>
+            <li>Pot emmagatzemar historial de converses</li>
+        </ul>
+
+        <table>
+            <tr>
+                <th>Risc</th>
+                <th>Probabilitat</th>
+                <th>Impacte</th>
+                <th>Mitigació</th>
+            </tr>
+            <tr>
+                <td>Dades enviades a servidors externs</td>
+                <td>Alta</td>
+                <td>Alt</td>
+                <td>Protocol d''anonimització</td>
+            </tr>
+            <tr>
+                <td>Emmagatzematge en historial</td>
+                <td>Mitjana</td>
+                <td>Alt</td>
+                <td>Esborrar historial regularment</td>
+            </tr>
+            <tr>
+                <td>Ús de dades per entrenament</td>
+                <td>Baixa-Mitjana</td>
+                <td>Mitjà</td>
+                <td>Revisar configuració de privacitat</td>
+            </tr>
+        </table>
+
+        <h2>❌ MAI usis Cursor per:</h2>
+
+        <div class="card">
+            <h3>1. Enganxar dades crues de pacients</h3>
+            <p>Noms, codis identificadors, dades clíniques vinculades</p>
+        </div>
+
+        <div class="card">
+            <h3>2. Resultats experimentals complets sense publicar</h3>
+            <p>Taules de dades de citometria amb resultats específics, gràfics amb dades reals abans d''anonimitzar</p>
+        </div>
+
+        <div class="card">
+            <h3>3. Mètodes patentables o propietaris</h3>
+            <p>Protocols exclusius no publicats, tècniques innovadores abans de patentar</p>
+        </div>
+
+        <div class="card">
+            <h3>4. Informació de col·laboracions confidencials</h3>
+            <p>Dades compartides sota acords de confidencialitat</p>
+        </div>
+
+        <h2>✅ SÍ pots usar Cursor per:</h2>
+
+        <div class="card">
+            <h3>1. Estructurar la introducció (sense dades pròpies)</h3>
+            <p><strong>Exemple segur:</strong></p>
+            <pre><code>"Redacta una introducció sobre senescència cel·lular en VIH 
+basant-te en literatura publicada"</code></pre>
+        </div>
+
+        <div class="card">
+            <h3>2. Millorar la redacció de metodologia (descripció general)</h3>
+            <p><strong>Exemple segur:</strong></p>
+            <pre><code>"Millora la redacció d''aquesta metodologia: 
+[descripció general sense dades específiques]"</code></pre>
+        </div>
+
+        <div class="card">
+            <h3>3. Estructurar la discussió (referències a literatura)</h3>
+            <p><strong>Exemple segur:</strong></p>
+            <pre><code>"Ajuda''m a estructurar una discussió comparant els meus 
+resultats amb els de [Paper X, Paper Y]"</code></pre>
+        </div>
+
+        <div class="card">
+            <h3>4. Redactar l''abstract (després d''anonimitzar)</h3>
+            <p><strong>Exemple segur:</strong></p>
+            <pre><code>"Redacta un abstract basat en: Objectius [general], 
+Mètodes [descripció sense detalls], Resultats [anonimitzats], 
+Conclusions [generals]"</code></pre>
+        </div>
+
+        <h2>🔐 Protocol Pas a Pas: Usar Cursor de forma segura</h2>
+
+        <h3>ABANS d''usar Cursor:</h3>
+
+        <ol>
+            <li><strong>Prepara una versió anonimitzada del teu text</strong>
+                <ul>
+                    <li>Elimina noms de pacients, codis, identificadors</li>
+                    <li>Substitueix dades específiques per rangs o mitjanes</li>
+                    <li>Usa "Pacient A, B, C" en lloc de codis reals</li>
+                </ul>
+            </li>
+            <li><strong>Revisa configuració de privacitat</strong>
+                <ul>
+                    <li>Obre Cursor → Settings → Privacy</li>
+                    <li>Desactiva "Share usage data" si està disponible</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>DURANT l''ús:</h3>
+
+        <ol start="3">
+            <li><strong>Treballa per seccions separades</strong>
+                <ul>
+                    <li>No enganxis tot el paper d''un cop</li>
+                    <li>Treballa introducció, mètodes, resultats, discussió per separat</li>
+                </ul>
+            </li>
+            <li><strong>Usa mode "Ask" en lloc de "Agent"</strong>
+                <ul>
+                    <li>Mode "Ask": Tu tens control del que s''envia</li>
+                    <li>Mode "Agent": Pot llegir arxius automàticament (més risc)</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>DESPRÉS d''usar:</h3>
+
+        <ol start="5">
+            <li><strong>Insereix dades reals manualment</strong>
+                <ul>
+                    <li>Cursor t''ajuda amb estructura i redacció</li>
+                    <li>Tu afegeixes les dades específiques després</li>
+                </ul>
+            </li>
+            <li><strong>Esborra l''historial de conversa</strong>
+                <ul>
+                    <li>Cursor → Chat History → Delete</li>
+                    <li>Especialment si vas treballar amb informació sensible</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>📝 Exemple Pràctic: Redactar introducció amb Cursor</h2>
+
+        <div class="alert alert-danger">
+            <h3>❌ INCORRECTE (arriscat):</h3>
+            <pre><code>Prompt a Cursor:
+"Redacta la introducció del meu paper. Les meves dades mostren que 
+el 67% dels pacients VIH+ de la nostra cohort (n=45, Hospital 
+Clínic Barcelona, codi estudi VIH-SEN-2024) presenten marcadors 
+de senescència p16INK4a elevats..."</code></pre>
+            <p><strong>Problemes:</strong> Codi d''estudi, institució específica, dades sense publicar</p>
+        </div>
+
+        <div class="alert alert-success">
+            <h3>✅ CORRECTE (segur):</h3>
+            <pre><code>Prompt a Cursor:
+"Redacta una introducció sobre senescència cel·lular en infecció 
+per VIH. Ha de cobrir:
+1. Context: VIH com a malaltia crònica
+2. Problema: Envelliment prematur en pacients amb VIH
+3. Mecanisme: Senescència cel·lular i marcadors (p16INK4a, p21)
+4. Gap: Manca d''estudis sobre [la teva àrea específica, sense dades]
+5. Objectiu: Analitzar marcadors de senescència en cohort de pacients
+
+Basat en literatura publicada."</code></pre>
+        </div>
+
+        <p><strong>Després que Cursor generi el text:</strong></p>
+        <ul>
+            <li>Revisa i ajusta</li>
+            <li>Afegeix les teves dades específiques MANUALMENT (no a través de Cursor)</li>
+            <li>Verifica referències amb Zotero</li>
+        </ul>
+
+        <h2>💰 Cost i Estalvi</h2>
+
+        <table>
+            <tr>
+                <th>Aspecte</th>
+                <th>Detall</th>
+            </tr>
+            <tr>
+                <td>Cost</td>
+                <td>€0 (versió gratuïta) o ~€20/mes (Pro)</td>
+            </tr>
+            <tr>
+                <td>Estalvi de temps</td>
+                <td>10-12 hores per paper</td>
+            </tr>
+            <tr>
+                <td>Nivell de risc</td>
+                <td>🟠 Mitjà (controlable amb protocol)</td>
+            </tr>
+            <tr>
+                <td>Veredicte final</td>
+                <td>✅ SÍ, usar amb protocol</td>
+            </tr>
+        </table>
+
+        <div class="nav-bottom">
+            <a href="../../index.html">← Tornar a l''inici</a>
+            <a href="../casos-practics/redactar-introduccio.html">Cas pràctic complet →</a>
+        </div>
+
+                        <footer>
+            <p><a href="../../index.html">🏠 Inici</a> | <a href="../inici/accio-urgent.html">🚨 Acció Urgent</a> | <a href="../eines/cursor-analisi.html">💡 Cursor</a></p>
+        </footer>
+    </div>
+</body>
+</html>

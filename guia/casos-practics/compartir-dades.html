@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cas Pràctic: Compartir dades amb col·laboradors</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💼 Cas Pràctic: Compartir dades amb col·laboradors</h1>
+            <p>Protocol complet per compartir resultats no publicats de forma segura</p>
+        </header>
+        <nav>
+            <a href="../../index.html">🏠 Inici</a>
+            <a href="../inici/accio-urgent.html">🚨 Acció Urgent</a>
+            <a href="../eines/cursor-analisi.html">💡 Cursor</a>
+        </nav>
+        <div class="breadcrumb">
+            <a href="../../index.html">Inici</a> &gt; <a href="compartir-dades.html">Casos Pràctics</a> &gt; Compartir Dades
+        </div>
+
+        <h2>🎯 Escenari</h2>
+
+        <div class="card">
+            <p><strong>Situació:</strong> Has de compartir resultats de citometria de flux (arxius .fcs + anàlisi FlowJo) amb un col·laborador d''una altra universitat per un projecte conjunt.</p>
+            
+            <p><strong>Dades a compartir:</strong></p>
+            <ul>
+                <li>15 arxius .fcs (200 MB total)</li>
+                <li>1 workspace FlowJo (.wsp)</li>
+                <li>1 document Word amb resultats preliminars</li>
+            </ul>
+            
+            <p><strong>Risc:</strong> Si ho fas malament, qualsevol podria accedir a aquestes dades (inclosos resultats abans de publicar)</p>
+        </div>
+
+        <h2>❌ Forma INCORRECTA (NO fer això)</h2>
+
+        <div class="alert alert-danger">
+            <h3>Mètode arriscat:</h3>
+            <ol>
+                <li>Puges tots els arxius <strong>sense xifrar</strong> a una carpeta de Google Drive</li>
+                <li>Comparteixes la carpeta amb l''email del col·laborador</li>
+                <li>Li envies un email: "Ja pots veure les dades a Drive"</li>
+            </ol>
+            
+            <h4>Problemes crítics:</h4>
+            <ul>
+                <li>🔴 Arxius sense xifrar a Google Drive</li>
+                <li>🔴 Si hackegen el teu compte → accés a tot</li>
+                <li>🔴 Si hackegen el compte del col·laborador → accés a tot</li>
+                <li>🔴 Si el col·laborador comparteix per error → exposició massiva</li>
+                <li>🔴 Rastro permanent a servidors de Google</li>
+            </ul>
+        </div>
+
+        <h2>✅ Forma CORRECTA (Protocol segur de 2 canals)</h2>
+
+        <h3>Pas 1: Organitza els arxius localment</h3>
+
+        <div class="card">
+            <h4>Crea una carpeta al teu ordinador:</h4>
+            <pre><code>Compartir-ColaboradorX/
+├── citometria-fcs/
+│   ├── mostra-A-CD4.fcs
+│   ├── mostra-B-CD4.fcs
+│   └── ... (15 arxius)
+├── analisi-flowjo.wsp
+└── resultats-preliminars.docx</code></pre>
+            
+            <p><strong>Important:</strong> Verifica que els noms d''arxius NO continguin informació identificable</p>
+        </div>
+
+        <h3>Pas 2: Xifra amb 7-Zip</h3>
+
+        <div class="card">
+            <ol>
+                <li>Clic dret a la carpeta <code>Compartir-ColaboradorX</code></li>
+                <li>7-Zip → "Add to archive..."</li>
+                <li><strong>Configuració:</strong>
+                    <ul>
+                        <li>Format: 7z</li>
+                        <li>Encryption: AES-256</li>
+                        <li>✅ Encrypt file names</li>
+                        <li>Contrasenya: <code>ColabVih2024!Cito#Bcn@Segur$X</code> (exemple, crea la teva)</li>
+                    </ul>
+                </li>
+                <li>Click OK</li>
+            </ol>
+            
+            <p><strong>Resultat:</strong> Arxiu <code>Compartir-ColaboradorX.7z</code> (xifrat, ~200 MB)</p>
+            <p><strong>Referència:</strong> <a href="../protocols/xifrat-drive.html">Tutorial complet 7-Zip</a></p>
+        </div>
+
+        <h3>Pas 3: Puja l''arxiu xifrat a Google Drive</h3>
+
+        <div class="card">
+            <ol>
+                <li>Obre Google Drive</li>
+                <li>Puja <code>Compartir-ColaboradorX.7z</code></li>
+                <li>Clic dret → "Get link"</li>
+                <li><strong>Configuració del link:</strong>
+                    <ul>
+                        <li>Accés: "Restricted" (NOMÉS persones específiques)</li>
+                        <li>Afegeix l''email del col·laborador</li>
+                        <li>Permisos: "Viewer" (NO Editor)</li>
+                    </ul>
+                </li>
+                <li>Copia el link</li>
+            </ol>
+        </div>
+
+        <h3>Pas 4: Envia l''arxiu per EMAIL (Canal 1)</h3>
+
+        <div class="card">
+            <h4>Email al col·laborador:</h4>
+            <pre><code>Assumpte: Arxiu xifrat - Dades citometria projecte VIH
+
+Hola [Nom],
+
+T''he compartit l''arxiu xifrat amb les dades de citometria a Google Drive:
+[enllaç al Drive]
+
+IMPORTANT:
+- L''arxiu està xifrat amb AES-256
+- La contrasenya l''enviaré per WhatsApp en els propers minuts
+- NO comparteixis aquest arxiu amb tercers sense consultar-me
+
+Per obrir l''arxiu:
+1. Descarrega''l de Drive
+2. Instal·la 7-Zip (https://www.7-zip.org/) si no el tens
+3. Doble clic a l''arxiu → introdueix la contrasenya que rebràs per WhatsApp
+
+Si tens problemes, avisa''m.
+
+Salutacions,
+[Tu]</code></pre>
+        </div>
+
+        <h3>Pas 5: Envia la contrasenya per WhatsApp/SMS (Canal 2)</h3>
+
+        <div class="card">
+            <h4>Missatge WhatsApp:</h4>
+            <pre><code>Contrasenya arxiu Drive: ColabVih2024!Cito#Bcn@Segur$X
+
+Esborra aquest missatge després d''obrir l''arxiu.
+
+Si no funciona, avisa''m immediatament.</code></pre>
+            
+            <p><strong>Crítica:</strong> La separació de canals (email per arxiu, WhatsApp per contrasenya) és ESSENCIAL. Un atacant hauria de comprometre AMBDÓS per accedir.</p>
+        </div>
+
+        <h3>Pas 6: Verifica que funciona</h3>
+
+        <div class="card">
+            <ol>
+                <li>Demana al col·laborador que confirmi quan ha descarregat i obert l''arxiu</li>
+                <li>Si hi ha problemes, resol-los immediatament</li>
+                <li>Suggereix que esborri el missatge de WhatsApp després d''obrir</li>
+            </ol>
+        </div>
+
+        <h2>🔄 Situacions especials</h2>
+
+        <div class="card">
+            <h3>Situació 1: Compartir amb múltiples col·laboradors (3-5 persones)</h3>
+            
+            <h4>Opció A: Una contrasenya per a tots</h4>
+            <ul>
+                <li><strong>Procés:</strong>
+                    <ol>
+                        <li>Xifra l''arxiu amb UNA contrasenya</li>
+                        <li>Comparteix l''arxiu a Drive amb tots els col·laboradors</li>
+                        <li>Envia la contrasenya per WhatsApp a cadascun individualment</li>
+                    </ol>
+                </li>
+                <li><strong>Avantatge:</strong> Ràpid</li>
+                <li><strong>Desavantatge:</strong> Si un compromet la contrasenya, afecta a tots</li>
+            </ul>
+            
+            <h4>Opció B: Contrasenya diferent per a cada persona (MÉS SEGUR)</h4>
+            <ul>
+                <li><strong>Procés:</strong>
+                    <ol>
+                        <li>Xifra el mateix contingut 3-5 vegades amb contrasenyes diferents</li>
+                        <li>Arxius: <code>Dades-PersonaA.7z</code>, <code>Dades-PersonaB.7z</code>, etc.</li>
+                        <li>Comparteix cada arxiu amb la persona corresponent</li>
+                        <li>Envia cada contrasenya per WhatsApp individual</li>
+                    </ol>
+                </li>
+                <li><strong>Avantatge:</strong> Seguretat màxima, control granular</li>
+                <li><strong>Desavantatge:</strong> Més feina inicial</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Situació 2: Arxius molt grans (>1 GB)</h3>
+            
+            <p><strong>Problema:</strong> Google Drive gratuït pot ser lent per arxius molt grans</p>
+            
+            <p><strong>Solució:</strong></p>
+            <ol>
+                <li><strong>Comprimeix més:</strong> 7-Zip amb nivell de compressió "Ultra"</li>
+                <li><strong>Divideix l''arxiu:</strong>
+                    <ul>
+                        <li>7-Zip → "Split to volumes" → 500 MB cada part</li>
+                        <li>Resultat: <code>Dades.7z.001</code>, <code>Dades.7z.002</code>, etc.</li>
+                        <li>Puja cada part a Drive</li>
+                        <li>El col·laborador descarrega totes les parts i 7-Zip les reconstrueix automàticament</li>
+                    </ul>
+                </li>
+                <li><strong>Alternativa:</strong> Usa WeTransfer (fins 2 GB gratuït) + xifrat</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>Situació 3: El col·laborador NO té 7-Zip ni sap instal·lar-lo</h3>
+            
+            <p><strong>Solució educativa:</strong></p>
+            <ol>
+                <li>Envia un email previ explicant:
+                    <pre><code>"Per seguretat, enviarem les dades xifrades.
+Necessitaràs instal·lar 7-Zip (gratuït, 2 minuts):
+
+1. Descarrega de https://www.7-zip.org/
+2. Instal·la (següent → següent → instal·lar)
+3. Ja està! Ara pots obrir arxius .7z
+
+Si tens problemes, fem una videocridada de 5 min i t''ajudo."</code></pre>
+                </li>
+                <li>Ofereix ajuda tècnica si cal</li>
+            </ol>
+        </div>
+
+        <h2>⚠️ Errors comuns a evitar</h2>
+
+        <table>
+            <tr>
+                <th>Error</th>
+                <th>Per què és perillós</th>
+                <th>Solució</th>
+            </tr>
+            <tr>
+                <td>Enviar contrasenya pel mateix email</td>
+                <td>Derrota el propòsit del xifratge</td>
+                <td>Sempre canal separat (WhatsApp/SMS)</td>
+            </tr>
+            <tr>
+                <td>Link de Drive "Anyone with the link"</td>
+                <td>Qualsevol amb el link pot accedir</td>
+                <td>Sempre "Restricted" (només emails específics)</td>
+            </tr>
+            <tr>
+                <td>Contrasenya feble ("12345", "dades")</td>
+                <td>Pot trencar-se amb força bruta</td>
+                <td>Mínim 20 caràcters, complexa</td>
+            </tr>
+            <tr>
+                <td>No esborrar arxiu original sense xifrar</td>
+                <td>Segueix exposat localment o a Drive</td>
+                <td>Esborra després de xifrar i verificar</td>
+            </tr>
+            <tr>
+                <td>Permisos "Editor" a Drive</td>
+                <td>Col·laborador pot compartir amb altres</td>
+                <td>Sempre "Viewer" per arxius sensibles</td>
+            </tr>
+        </table>
+
+        <h2>📊 Comparació de mètodes</h2>
+
+        <table>
+            <tr>
+                <th>Mètode</th>
+                <th>Seguretat</th>
+                <th>Temps</th>
+                <th>Recomanat per</th>
+            </tr>
+            <tr style="background: #fee;">
+                <td>Drive sense xifrar</td>
+                <td>🔴 Molt baixa</td>
+                <td>🟢 5 min</td>
+                <td>❌ MAI per dades sensibles</td>
+            </tr>
+            <tr style="background: #ffd;">
+                <td>Email adjunt (sense xifrar)</td>
+                <td>🔴 Molt baixa</td>
+                <td>🟢 2 min</td>
+                <td>❌ MAI per dades sensibles</td>
+            </tr>
+            <tr style="background: #efe;">
+                <td>Drive xifrat + contrasenya email</td>
+                <td>🟠 Baixa-Mitjana</td>
+                <td>🟡 10 min</td>
+                <td>🟡 Acceptable però no òptim</td>
+            </tr>
+            <tr style="background: #efe;">
+                <td>Drive xifrat + contrasenya WhatsApp (2 canals)</td>
+                <td>🟢 Alta</td>
+                <td>🟡 15 min</td>
+                <td>✅ RECOMANAT</td>
+            </tr>
+            <tr style="background: #efe;">
+                <td>Drive xifrat + contrasenya SMS + 2FA</td>
+                <td>🟢 Molt alta</td>
+                <td>🟠 20 min</td>
+                <td>✅ Dades extremadament sensibles</td>
+            </tr>
+        </table>
+
+        <div class="alert alert-success">
+            <h3>✅ Checklist final</h3>
+            <p>Abans de compartir dades sensibles:</p>
+            <ul>
+                <li>☑️ Arxiu xifrat amb AES-256 + "Encrypt file names"?</li>
+                <li>☑️ Contrasenya forta (20+ caràcters)?</li>
+                <li>☑️ Drive amb permisos "Restricted" + "Viewer"?</li>
+                <li>☑️ Contrasenya enviada per canal diferent (WhatsApp/SMS)?</li>
+                <li>☑️ Arxiu original sense xifrar esborrat?</li>
+                <li>☑️ Col·laborador confirmat que pot obrir?</li>
+            </ul>
+        </div>
+
+        <div class="nav-bottom">
+            <a href="redactar-introduccio.html">← Redactar Introducció</a>
+            <a href="presentacions-congressos.html">Presentacions Congressos →</a>
+        </div>
+
+        <footer>
+            <p><a href="../../index.html">🏠 Inici</a> | <a href="../inici/accio-urgent.html">🚨 Acció Urgent</a> | <a href="../eines/cursor-analisi.html">💡 Cursor</a></p>
+        </footer>
+    </div>
+</body>
+</html>

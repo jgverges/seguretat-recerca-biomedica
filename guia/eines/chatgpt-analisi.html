@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT - Avaluació del teu ús actual</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💬 ChatGPT - Avaluació i Protocol d''Ús Segur</h1>
+            <p>Anàlisi de seguretat per a investigadores biomèdiques</p>
+        </header>
+        <nav>
+            <a href="../../index.html">🏠 Inici</a>
+            <a href="../inici/accio-urgent.html">🚨 Acció Urgent</a>
+            <a href="cursor-analisi.html">💡 Cursor</a>
+        </nav>
+        <div class="breadcrumb">
+            <a href="../../index.html">Inici</a> &gt; <a href="chatgpt-analisi.html">Eines</a> &gt; ChatGPT
+        </div>
+
+        <div class="alert alert-success" style="text-align: center;">
+            <h2 style="margin: 0 0 10px 0; border: none; color: #155724;">✅ VEREDICTE: SÍ, pots usar ChatGPT</h2>
+            <p style="font-size: 1.1em;"><strong>Però NOMÉS seguint el protocol de seguretat</strong></p>
+        </div>
+
+        <h2>🎯 Què és ChatGPT?</h2>
+
+        <p>ChatGPT (OpenAI) és un model d''IA conversacional que pot:</p>
+        <ul>
+            <li>Ajudar a redactar i estructurar textos científics</li>
+            <li>Revisar gramàtica i estil</li>
+            <li>Generar resums de literatura</li>
+            <li>Ajudar amb metodologia i discussió</li>
+            <li>Traduir entre idiomes</li>
+        </ul>
+
+        <p><strong>Estalvi de temps estimat: 8-10 hores per paper</strong></p>
+
+        <h2>⚠️ On van les teves dades quan uses ChatGPT?</h2>
+
+        <div class="card">
+            <h3>Flux de dades</h3>
+            <ol>
+                <li>Escrius un missatge (prompt) amb el teu contingut</li>
+                <li>El text <strong>s''envia als servidors d''OpenAI</strong> (Estats Units)</li>
+                <li>El model processa el text i genera una resposta</li>
+                <li>La conversa es guarda al teu <strong>historial de xat</strong></li>
+            </ol>
+        </div>
+
+        <table>
+            <tr>
+                <th>Risc</th>
+                <th>Probabilitat</th>
+                <th>Impacte</th>
+                <th>Mitigació</th>
+            </tr>
+            <tr>
+                <td>Dades enviades a servidors externs</td>
+                <td>Alta</td>
+                <td>Alt</td>
+                <td>Protocol d''anonimització</td>
+            </tr>
+            <tr>
+                <td>Historial de converses guardat</td>
+                <td>Alta</td>
+                <td>Mitjà-Alt</td>
+                <td>Desactivar historial o esborrar regularment</td>
+            </tr>
+            <tr>
+                <td>Ús de dades per entrenament</td>
+                <td>Baixa (amb compte Business)</td>
+                <td>Mitjà</td>
+                <td>Revisar configuració de privacitat</td>
+            </tr>
+        </table>
+
+        <h2>❌ MAI usis ChatGPT per:</h2>
+
+        <div class="card">
+            <h3>1. Enganxar dades identificables de pacients</h3>
+            <p><strong>Exemple INCORRECTE (MAI fer això):</strong></p>
+            <pre><code>❌ "Analitza aquestes dades:
+Pacient 0045-VIH, dona 45 anys, Hospital Clínic Barcelona
+CD4: 350, Càrrega viral: 5000 còpies/ml..."</code></pre>
+            <p><strong>Problemes:</strong> Codi pacient, edat, institució, dades clíniques identificables</p>
+        </div>
+
+        <div class="card">
+            <h3>2. Resultats complets sense publicar</h3>
+            <p><strong>Exemple INCORRECTE:</strong></p>
+            <pre><code>❌ "Revisa la meva taula de resultats:
+[Taula amb totes les dades estadístiques del teu estudi
+abans de publicar]"</code></pre>
+            <p><strong>Problema:</strong> Si algú accedeix al teu compte → pot veure els teus resultats abans de publicar</p>
+        </div>
+
+        <div class="card">
+            <h3>3. Mètodes propietaris o patentables</h3>
+            <p><strong>Exemple INCORRECTE:</strong></p>
+            <pre><code>❌ "Explica''m com millorar aquest protocol:
+[Protocol innovador que estàs desenvolupant]"</code></pre>
+            <p><strong>Problema:</strong> Risc de pèrdua de propietat intel·lectual</p>
+        </div>
+
+        <h2>✅ SÍ pots usar ChatGPT per:</h2>
+
+        <div class="card">
+            <h3>1. Estructurar introducció (literatura publicada)</h3>
+            <p><strong>Exemple CORRECTE:</strong></p>
+            <pre><code>✅ "Redacta una introducció sobre senescència cel·lular
+en infecció per VIH. Ha de cobrir:
+1. Context general VIH com a malaltia crònica
+2. Envelliment prematur en pacients VIH+
+3. Marcadors de senescència (p16INK4a, p21)
+4. Gap en la literatura actual
+
+Basat només en literatura publicada."</code></pre>
+        </div>
+
+        <div class="card">
+            <h3>2. Millorar redacció (text genèric)</h3>
+            <p><strong>Exemple CORRECTE:</strong></p>
+            <pre><code>✅ "Millora la redacció d''aquest paràgraf de metodologia:
+
+''Vam recollir mostres de sang de participants. Les mostres
+es van processar dins les 2 hores. Vam usar citometria
+de flux per analitzar poblacions cel·lulars.''"</code></pre>
+            <p><strong>Per què és segur:</strong> Text genèric sense dades específiques</p>
+        </div>
+
+        <div class="card">
+            <h3>3. Ajuda amb estructura de discussió</h3>
+            <p><strong>Exemple CORRECTE:</strong></p>
+            <pre><code>✅ "Ajuda''m a estructurar la discussió d''un paper sobre
+senescència en VIH. Tinc 3 troballes principals:
+1. Els meus resultats mostren X (sense especificar valors exactes)
+2. Això contrasta amb Paper A que va trobar Y
+3. Això suggereix Z
+
+Com puc organitzar la discussió per comparar amb
+literatura existent?"</code></pre>
+        </div>
+
+        <div class="card">
+            <h3>4. Traducció anglès ↔ català/castellà</h3>
+            <p><strong>Exemple CORRECTE:</strong></p>
+            <pre><code>✅ "Tradueix aquest abstract al català:
+
+''Cellular senescence plays a critical role in chronic
+HIV infection. We investigated markers of senescence
+in a cohort of patients...''"</code></pre>
+            <p><strong>Nota:</strong> Només tradueix text ja anonimitzat</p>
+        </div>
+
+        <h2>🔐 Protocol Pas a Pas: Usar ChatGPT de forma segura</h2>
+
+        <h3>ABANS d''usar ChatGPT:</h3>
+
+        <div class="card">
+            <h3>1. Configura privacitat (ChatGPT Plus/gratuït)</h3>
+            <ol>
+                <li>Obre ChatGPT → Settings (icona inferior esquerra)</li>
+                <li>Data Controls</li>
+                <li><strong>Desactiva "Improve the model for everyone"</strong> (si disponible)</li>
+                <li>Considera desactivar "Chat History" per dades sensibles</li>
+            </ol>
+            <p><strong>Nota:</strong> Amb Chat History OFF, les converses NO es guarden (més segur)</p>
+        </div>
+
+        <div class="card">
+            <h3>2. Prepara versió anonimitzada</h3>
+            <ul>
+                <li>Substitueix noms/codis de pacients per "Pacient A, B, C"</li>
+                <li>Elimina institucions específiques</li>
+                <li>Usa rangs en lloc de valors exactes ("CD4 entre 300-400" vs "CD4: 347")</li>
+            </ul>
+        </div>
+
+        <h3>DURANT l''ús:</h3>
+
+        <div class="card">
+            <h3>3. Treballa per seccions separades</h3>
+            <p><strong>NO enganxis tot el paper d''un cop.</strong> Treballa:</p>
+            <ul>
+                <li>Introducció en una conversa</li>
+                <li>Mètodes en una altra</li>
+                <li>Discussió en una altra</li>
+            </ul>
+            <p><strong>Objectiu:</strong> Limitar exposició si algú accedeix al teu compte</p>
+        </div>
+
+        <div class="card">
+            <h3>4. Usa prompts genèrics</h3>
+            <p>Demana ajuda amb <strong>estructura i redacció</strong>, NO amb contingut específic:</p>
+            <pre><code>✅ CORRECTE: "Com puc estructurar una discussió que compari
+els meus resultats amb 3 estudis previs?"
+
+❌ INCORRECTE: "Aquí tens els meus resultats exactes [...]
+Compara''ls amb aquests estudis [...]"</code></pre>
+        </div>
+
+        <h3>DESPRÉS d''usar:</h3>
+
+        <div class="card">
+            <h3>5. Esborra converses sensibles</h3>
+            <ol>
+                <li>Obre el xat amb contingut sensible</li>
+                <li>Click a la icona de paperera</li>
+                <li>Confirma esborrat</li>
+            </ol>
+            <p><strong>Freqüència recomanada:</strong> Cada setmana durant redacció del paper</p>
+        </div>
+
+        <h2>💰 ChatGPT gratuït vs Plus vs Team/Enterprise</h2>
+
+        <table>
+            <tr>
+                <th>Versió</th>
+                <th>Cost</th>
+                <th>Model</th>
+                <th>Ús dades per entrenament</th>
+                <th>Recomanat per</th>
+            </tr>
+            <tr>
+                <td>Gratuït</td>
+                <td>€0</td>
+                <td>GPT-3.5</td>
+                <td>🟠 Pot usar-se (si no desactives)</td>
+                <td>🟡 Ús ocasional, text poc sensible</td>
+            </tr>
+            <tr>
+                <td>Plus</td>
+                <td>~€20/mes</td>
+                <td>GPT-4</td>
+                <td>🟠 Pot usar-se (si no desactives)</td>
+                <td>🟢 Redacció regular amb protocol</td>
+            </tr>
+            <tr>
+                <td>Team/Enterprise</td>
+                <td>~€25-30/usuari/mes</td>
+                <td>GPT-4</td>
+                <td>🟢 NO s''usa per entrenament</td>
+                <td>🟢 Institucions amb dades sensibles</td>
+            </tr>
+        </table>
+
+        <h2>📝 Exemple Pràctic Complet</h2>
+
+        <div class="alert alert-danger">
+            <h3>❌ INCORRECTE (arriscat):</h3>
+            <pre><code>Prompt a ChatGPT:
+"Revisa la meva introducció:
+
+La nostra cohort de 45 pacients VIH+ del Hospital Clínic
+Barcelona (codi estudi VIH-SEN-2024) mostra que el 67%
+presenten nivells elevats de p16INK4a (mitjana 2.4 vs 0.8
+en controls, p<0.001)..."</code></pre>
+            <p><strong>Problemes:</strong> Codi estudi, institució, mida mostra exacta, resultats específics</p>
+        </div>
+
+        <div class="alert alert-success">
+            <h3>✅ CORRECTE (segur):</h3>
+            <pre><code>Prompt a ChatGPT:
+"Ajuda''m a redactar una introducció per un estudi sobre
+senescència cel·lular en pacients amb VIH crònic.
+
+Ha de cobrir:
+1. Context: VIH com a malaltia crònica amb tractament antiviral
+2. Problema: Envelliment prematur malgrat tractament efectiu
+3. Mecanisme: Senescència cel·lular i marcadors (p16INK4a, p21)
+4. Gap: Manca d''estudis sobre la relació entre senescència
+   i duració de la infecció
+5. Objectiu: Analitzar marcadors de senescència en cohort
+   de pacients (sense especificar mida ni institució)
+
+Basat en literatura publicada recent (2018-2024)."</code></pre>
+        </div>
+
+        <p><strong>Després que ChatGPT generi el text:</strong></p>
+        <ol>
+            <li>Copia el text generat</li>
+            <li>Enganxa''l al teu document local (Word/Google Docs)</li>
+            <li>Afegeix les teves dades específiques MANUALMENT</li>
+            <li>Revisa i ajusta amb la teva expertesa</li>
+            <li>Verifica referències amb Zotero/Mendeley</li>
+            <li><strong>Esborra la conversa de ChatGPT</strong></li>
+        </ol>
+
+        <h2>🆚 ChatGPT vs Cursor vs Grammarly</h2>
+
+        <table>
+            <tr>
+                <th>Eina</th>
+                <th>Millor per</th>
+                <th>Risc relatiu</th>
+                <th>Recomanació</th>
+            </tr>
+            <tr>
+                <td>ChatGPT</td>
+                <td>Estructura, redacció, brainstorming</td>
+                <td>🟠 Mitjà (amb protocol)</td>
+                <td>✅ Usar amb anonimització</td>
+            </tr>
+            <tr>
+                <td><a href="cursor-analisi.html">Cursor</a></td>
+                <td>Redacció dins editor, context ampli</td>
+                <td>🟠 Mitjà (amb protocol)</td>
+                <td>✅ Usar amb mode Ask + anonimització</td>
+            </tr>
+            <tr>
+                <td>Grammarly</td>
+                <td>Correccions gramàtica/estil</td>
+                <td>🟠 Mitjà (llegeix tot el text)</td>
+                <td>🟡 Només per text ja anonimitzat</td>
+            </tr>
+            <tr>
+                <td>Eines locals (Word, LibreOffice)</td>
+                <td>Correccions bàsiques offline</td>
+                <td>🟢 Baix</td>
+                <td>✅ Preferibles per dades sensibles</td>
+            </tr>
+        </table>
+
+        <h2>❓ Preguntes freqüents</h2>
+
+        <div class="card">
+            <h3>P: OpenAI pot llegir les meves converses?</h3>
+            <p><strong>R: Tècnicament SÍ.</strong> Les converses passen pels seus servidors. Tot i que les seves polítiques diuen que no les llegeixen activament, és millor assumir que poden accedir-hi.</p>
+        </div>
+
+        <div class="card">
+            <h3>P: Puc usar ChatGPT per redactar un paper sencer?</h3>
+            <p><strong>R: NO.</strong> Per diverses raons:</p>
+            <ul>
+                <li>Èticament problemàtic (no és el teu treball)</li>
+                <li>ChatGPT pot inventar referències (al·lucinacions)</li>
+                <li>No té accés als teus resultats reals</li>
+            </ul>
+            <p><strong>Ús correcte:</strong> Assistent per millorar redacció i estructura, TU generes el contingut</p>
+        </div>
+
+        <div class="card">
+            <h3>P: He de mencionar ChatGPT als agraïments del paper?</h3>
+            <p><strong>R: Depèn de la revista.</strong> Consulta les normes de la revista. Algunes demanen transparència sobre ús d''IA.</p>
+        </div>
+
+        <div class="nav-bottom">
+            <a href="cursor-analisi.html">← Anàlisi Cursor</a>
+            <a href="eines-locals.html">Eines Locals →</a>
+        </div>
+
+        <footer>
+            <p><a href="../../index.html">🏠 Inici</a> | <a href="../inici/accio-urgent.html">🚨 Acció Urgent</a> | <a href="cursor-analisi.html">💡 Cursor</a></p>
+        </footer>
+    </div>
+</body>
+</html>

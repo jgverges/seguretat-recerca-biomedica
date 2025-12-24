@@ -1,0 +1,12 @@
+﻿# Scripts de preparacio
+script*.ps1
+crear-*.ps1
+
+# Arxius temporals
+*.tmp
+*.bak
+*~
+
+# Carpetes de sistema
+.DS_Store
+Thumbs.db

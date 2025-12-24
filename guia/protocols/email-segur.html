@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocol: Email segur pas a pas</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📧 Protocol: Email segur pas a pas</h1>
+            <p>Com compartir dades sensibles per email sense riscos</p>
+        </header>
+        <nav>
+            <a href="../../index.html">🏠 Inici</a>
+            <a href="../inici/accio-urgent.html">🚨 Acció Urgent</a>
+            <a href="../eines/cursor-analisi.html">💡 Eines</a>
+        </nav>
+        <div class="breadcrumb">
+            <a href="../../index.html">Inici</a> &gt; <a href="../protocols/email-segur.html">Protocols</a> &gt; Email Segur
+        </div>
+
+        <h2>🎯 Objectiu</h2>
+        <p>Aprendre a compartir arxius sensibles per email de manera que <strong>només el destinatari</strong> pugui llegir-los, encara que:</p>
+        <ul>
+            <li>Hackegen el teu compte Gmail</li>
+            <li>Hackegen el compte del destinatari</li>
+            <li>Interceptin l'email</li>
+        </ul>
+
+        <h2>❌ EL PROBLEMA: Email sense xifrar</h2>
+
+        <div class="alert alert-danger">
+            <h3>Què passa quan envies un email "normal"</h3>
+            <pre><code>De: tu@gmail.com
+Per a: col·lega@hospital.com
+Assumpte: Resultats VIH pacient 0045
+Adjunt: resultats-pacient-0045.xlsx
+
+El contingut de l'arxiu viatja en TEXT PLA per internet.
+Gmail/Outlook poden llegir-lo.
+Si hackegen qualsevol compte → accés immediat.</code></pre>
+        </div>
+
+        <h2>✅ LA SOLUCIÓ: Protocol de 2 canals</h2>
+
+        <div class="card">
+            <h3>Concepte clau: Separació de canal</h3>
+            <p><strong>Canal 1 (Email):</strong> Envies l'arxiu xifrat</p>
+            <p><strong>Canal 2 (SMS/WhatsApp):</strong> Envies la contrasenya</p>
+            <p><strong>Resultat:</strong> Un atacant hauria de comprometre AMBDÓS canals simultàniament (molt difícil)</p>
+        </div>
+
+        <h2>📋 Protocol pas a pas</h2>
+
+        <div class="card">
+            <h3>Pas 1: Xifra l'arxiu amb 7-Zip</h3>
+            <ol>
+                <li>Segueix el <a href="xifrat-drive.html">Tutorial 7-Zip</a></li>
+                <li>Crea un arxiu <code>.7z</code> amb contrasenya forta</li>
+                <li>Verifica que l'arxiu s'obre correctament amb la contrasenya</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>Pas 2: Envia l'arxiu xifrat per email</h3>
+            <ol>
+                <li>Obre Gmail/Outlook</li>
+                <li>Nou email al destinatari</li>
+                <li><strong>Assumpte:</strong> "Arxiu xifrat - Contrasenya per SMS"</li>
+                <li><strong>Cos del missatge:</strong>
+                    <pre><code>Hola,
+
+T'adjunto l'arxiu xifrat amb les dades que em vas demanar.
+
+La contrasenya l'enviaré per SMS/WhatsApp en els propers minuts.
+
+Per obrir l'arxiu:
+1. Descarrega'l
+2. Fes doble clic
+3. Introdueix la contrasenya que rebràs per SMS
+
+Salutacions</code></pre>
+                </li>
+                <li>Adjunta l'arxiu <code>.7z</code></li>
+                <li><strong>Envia</strong></li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>Pas 3: Envia la contrasenya per SMS/WhatsApp</h3>
+            <ol>
+                <li>Obre WhatsApp o SMS</li>
+                <li>Envia un missatge al destinatari:
+                    <pre><code>Contrasenya arxiu email: [la_teva_contrasenya]
+
+Esborra aquest missatge després d'obrir l'arxiu.</code></pre>
+                </li>
+            </ol>
+        </div>
+
+        <div class="alert alert-success">
+            <h3>✅ Ara l'arxiu està protegit</h3>
+            <p>Encara que algú intercepti l'email o hackegi el compte, NO podrà obrir l'arxiu sense la contrasenya que has enviat per un canal diferent.</p>
+        </div>
+
+        <h2>🔄 Protocol per compartir amb múltiples col·legues</h2>
+
+        <div class="card">
+            <h3>Opció A: Contrasenya única per a tots</h3>
+            <ol>
+                <li>Xifra l'arxiu amb UNA contrasenya</li>
+                <li>Envia l'arxiu per email a tots els destinataris</li>
+                <li>Envia la contrasenya per SMS/WhatsApp a cadascun</li>
+            </ol>
+            <p><strong>Avantatge:</strong> Ràpid</p>
+            <p><strong>Desavantatge:</strong> Si un col·lega compromet la contrasenya, tots els altres es veuen afectats</p>
+        </div>
+
+        <div class="card">
+            <h3>Opció B: Contrasenya diferent per a cada persona (més segur)</h3>
+            <ol>
+                <li>Xifra l'arxiu amb contrasenya diferents (un .7z per persona)</li>
+                <li>Envia cada arxiu per email al destinatari corresponent</li>
+                <li>Envia cada contrasenya per SMS/WhatsApp</li>
+            </ol>
+            <p><strong>Avantatge:</strong> Seguretat màxima</p>
+            <p><strong>Desavantatge:</strong> Més feina</p>
+        </div>
+
+        <h2>⚠️ Errors comuns a evitar</h2>
+
+        <table>
+            <tr>
+                <th>Error</th>
+                <th>Per què és perillós</th>
+                <th>Solució</th>
+            </tr>
+            <tr>
+                <td>Enviar contrasenya pel mateix email</td>
+                <td>Derrota tot el propòsit del xifratge</td>
+                <td>Sempre usar canal separat (SMS/WhatsApp)</td>
+            </tr>
+            <tr>
+                <td>Contrasenya feble ("1234", "pacient1")</td>
+                <td>Es pot trencar amb força bruta</td>
+                <td>Mínim 20 caràcters, complexa</td>
+            </tr>
+            <tr>
+                <td>No esborrar l'arxiu original</td>
+                <td>L'arxiu sense xifrar segueix exposat</td>
+                <td>Esborra l'original després de xifrar</td>
+            </tr>
+            <tr>
+                <td>Deixar contrasenya en missatge de WhatsApp indefinidament</td>
+                <td>Si roben el telèfon → accés</td>
+                <td>Demanar al destinatari que esborri el missatge</td>
+            </tr>
+        </table>
+
+        <h2>💼 Cas pràctic: Compartir resultats amb col·laborador extern</h2>
+
+        <div class="card">
+            <h3>Escenari</h3>
+            <p>Has de compartir resultats de citometria (arxiu .fcs de 150 MB) amb un col·laborador d'una altra universitat.</p>
+        </div>
+
+        <div class="card">
+            <h3>Procés recomanat</h3>
+            <ol>
+                <li><strong>Xifra</strong> l'arxiu amb 7-Zip (resultat: <code>citometria-cohort-2024.7z</code>)</li>
+                <li><strong>Puja</strong> el <code>.7z</code> a Google Drive</li>
+                <li><strong>Genera</strong> un enllaç compartit (només amb permís de visualització)</li>
+                <li><strong>Envia</strong> l'enllaç per email amb aquest missatge:
+                    <pre><code>Assumpte: Arxiu xifrat - Dades citometria cohort 2024
+
+Hola,
+
+T'he pujat l'arxiu xifrat a Drive: [enllaç]
+
+La contrasenya l'enviaré per WhatsApp.
+
+Instruccions:
+1. Descarrega l'arxiu .7z
+2. Obre'l amb 7-Zip (descarrega de https://www.7-zip.org/ si no el tens)
+3. Introdueix la contrasenya que rebràs per WhatsApp
+
+Salutacions</code></pre>
+                </li>
+                <li><strong>Envia</strong> la contrasenya per WhatsApp</li>
+            </ol>
+        </div>
+
+        <h2>📊 Comparació de mètodes</h2>
+
+        <table>
+            <tr>
+                <th>Mètode</th>
+                <th>Seguretat</th>
+                <th>Comoditat</th>
+                <th>Recomanat per</th>
+            </tr>
+            <tr>
+                <td>Email sense xifrar</td>
+                <td>🔴 Molt baixa</td>
+                <td>🟢 Molt còmode</td>
+                <td>❌ MAI per dades sensibles</td>
+            </tr>
+            <tr>
+                <td>Email + arxiu xifrat (contrasenya al mateix email)</td>
+                <td>🟠 Baixa</td>
+                <td>🟡 Còmode</td>
+                <td>❌ Inútil</td>
+            </tr>
+            <tr>
+                <td>Email + arxiu xifrat (contrasenya per SMS)</td>
+                <td>🟢 Alta</td>
+                <td>🟡 Acceptable</td>
+                <td>✅ Dades sensibles normals</td>
+            </tr>
+            <tr>
+                <td>Drive xifrat + contrasenya SMS + 2FA activat</td>
+                <td>🟢 Molt alta</td>
+                <td>🟠 Menys còmode</td>
+                <td>✅ Dades extremadament sensibles</td>
+            </tr>
+        </table>
+
+        <div class="nav-bottom">
+            <a href="xifrat-drive.html">← Tutorial 7-Zip</a>
+            <a href="../inici/accio-urgent.html">Acció Urgent →</a>
+        </div>
+
+        <footer>
+            <p><a href="../../index.html">🏠 Inici</a> | <a href="../inici/accio-urgent.html">🚨 Acció Urgent</a> | <a href="../eines/cursor-analisi.html">💡 Cursor</a></p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Riscos principals en recerca</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 7 Riscos principals en recerca biomèdica</h1>
+            <p>Contextualització dels riscos reals de filtració de dades</p>
+        </header>
+        <nav>
+            <a href="../../index.html">🏠 Inici</a>
+            <a href="../inici/accio-urgent.html">🚨 Acció Urgent</a>
+            <a href="../eines/cursor-analisi.html">💡 Eines</a>
+        </nav>
+        <div class="breadcrumb">
+            <a href="../../index.html">Inici</a> &gt; <a href="../fonaments/riscos-generals.html">Fonaments</a> &gt; 7 Riscos
+        </div>
+
+        <h2>🎯 Visió general</h2>
+        <p>Com a investigadora biomèdica, les teves dades passen per múltiples fases abans de ser publicades. Cada fase té riscos específics de filtració.</p>
+
+        <div class="alert alert-warning">
+            <p><strong>Context important:</strong> Aquests riscos NO són teòrics. El <a href="cas-hospital-clinic.html">cas del Hospital Clínic Barcelona 2023</a> va demostrar que hospitals de recerca punteres són objectius reals d'atacs.</p>
+        </div>
+
+        <h2>📊 Els 7 riscos principals (ordenats per probabilitat)</h2>
+
+        <div class="card">
+            <h3>🔴 Risc 1: Emmagatzematge en núvol sense xifrar</h3>
+            <p><strong>Probabilitat:</strong> MOLT ALTA (si no es prenen mesures)</p>
+            <p><strong>Impacte:</strong> CRÍTIC</p>
+            
+            <h4>Descripció:</h4>
+            <p>Guardar dades sensibles (resultats no publicats, dades de pacients) a Google Drive, Dropbox o OneDrive sense xifratge addicional.</p>
+            
+            <h4>Per què és perillós:</h4>
+            <ul>
+                <li>L'empresa del núvol pot llegir tècnicament els teus arxius</li>
+                <li>Si hackegen el teu compte → accés immediat a TOT</li>
+                <li>Errors de permisos (compartir link per error) → exposició</li>
+                <li>No compleix GDPR per dades de salut sense mesures addicionals</li>
+            </ul>
+            
+            <h4>Solució:</h4>
+            <p>✅ <a href="../protocols/xifrat-drive.html">Xifrar arxius amb 7-Zip (AES-256)</a> abans de pujar-los al núvol</p>
+            <p>✅ Activar autenticació de 2 factors (2FA)</p>
+        </div>
+
+        <div class="card">
+            <h3>🔴 Risc 2: Email sense xifrar entre col·legues</h3>
+            <p><strong>Probabilitat:</strong> MOLT ALTA</p>
+            <p><strong>Impacte:</strong> ALT</p>
+            
+            <h4>Descripció:</h4>
+            <p>Enviar arxius amb dades sensibles per email sense xifrar.</p>
+            
+            <h4>Per què és perillós:</h4>
+            <ul>
+                <li>L'email viatja "en text pla" per internet</li>
+                <li>Gmail/Outlook emmagatzemen TOTS els emails indefinidament</li>
+                <li>Si hackegen el compte del destinatari → accés a TOT el que li has enviat</li>
+                <li>Vulnerable a interceptació</li>
+            </ul>
+            
+            <h4>Solució:</h4>
+            <p>✅ <a href="../protocols/email-segur.html">Protocol email segur</a>: Arxiu xifrat per email + contrasenya per SMS/WhatsApp</p>
+        </div>
+
+        <div class="card">
+            <h3>🟠 Risc 3: Ús d'eines d'IA connectades sense protocol</h3>
+            <p><strong>Probabilitat:</strong> ALTA (creixent)</p>
+            <p><strong>Impacte:</strong> MITJÀ-ALT</p>
+            
+            <h4>Descripció:</h4>
+            <p>Utilitzar ChatGPT, Cursor, Grammarly o altres eines d'IA per redactar/revisar el teu paper enganxant dades sensibles directament.</p>
+            
+            <h4>Per què és perillós:</h4>
+            <ul>
+                <li>Les dades s'envien a servidors externs (OpenAI, Anthropic, etc.)</li>
+                <li>Pot quedar historial de converses</li>
+                <li>Risc (baix però existent) d'ús per entrenament de models</li>
+            </ul>
+            
+            <h4>Solució:</h4>
+            <p>✅ <a href="../eines/cursor-analisi.html">Protocol d'ús segur per Cursor</a></p>
+            <p>✅ Anonimitzar dades abans d'usar IA</p>
+            <p>✅ NO enganxar dades identificables de pacients</p>
+        </div>
+
+        <div class="card">
+            <h3>🟠 Risc 4: Ciberataques a institucions</h3>
+            <p><strong>Probabilitat:</strong> MITJANA (però creixent)</p>
+            <p><strong>Impacte:</strong> CRÍTIC</p>
+            
+            <h4>Descripció:</h4>
+            <p>Atacs ransomware a hospitals/universitats que bloquegen sistemes i roben dades.</p>
+            
+            <h4>Exemple real:</h4>
+            <p><strong><a href="cas-hospital-clinic.html">Hospital Clínic Barcelona (març 2023)</a>:</strong></p>
+            <ul>
+                <li>4,5 TB de dades robades (incloses dades de recerca clínica)</li>
+                <li>Sistemes bloquejats durant setmanes</li>
+                <li>Dades publicades a la dark web</li>
+            </ul>
+            
+            <h4>Què pots fer tu:</h4>
+            <p>🟡 Còpies de seguretat locals xifrades dels teus projectes crítics</p>
+            <p>🟡 NO dependre exclusivament de servidors de l'hospital</p>
+            <p>🟡 Xifrar dades sensibles fins i tot en sistemes interns</p>
+        </div>
+
+        <div class="card">
+            <h3>🟡 Risc 5: Scooping científic durant revisió per pars</h3>
+            <p><strong>Probabilitat:</strong> BAIXA-MITJANA (3-5% segons enquestes)</p>
+            <p><strong>Impacte:</strong> ALT (pèrdua de publicació first-author)</p>
+            
+            <h4>Descripció:</h4>
+            <p>Un revisor (peer reviewer) usa les teves idees/dades no publicades per publicar ell primer o compartir-ho amb competidors.</p>
+            
+            <h4>Per què passa:</h4>
+            <ul>
+                <li>La revisió per pars és "anònima" però NO sempre confidencial en la pràctica</li>
+                <li>Revisors amb conflictes d'interès</li>
+                <li>Camp molt competitiu (VIH, càncer, etc.)</li>
+            </ul>
+            
+            <h4>Com mitigar:</h4>
+            <p>🟡 Sol·licitar exclusió de revisors específics (competidors directes)</p>
+            <p>🟡 Publicar preprints abans d'enviar a revista (estableix prioritat temporal)</p>
+            <p>🟡 Registrar protocols a ClinicalTrials.gov abans d'enviar resultats</p>
+        </div>
+
+        <div class="card">
+            <h3>🟡 Risc 6: Filtracions en presentacions a congressos</h3>
+            <p><strong>Probabilitat:</strong> BAIXA-MITJANA</p>
+            <p><strong>Impacte:</strong> MITJÀ</p>
+            
+            <h4>Descripció:</h4>
+            <p>Algú fotografia les teves slides amb dades preliminars i les usa/comparteix abans que publiquis.</p>
+            
+            <h4>Escenaris:</h4>
+            <ul>
+                <li>Foto no autoritzada de slides amb resultats clau</li>
+                <li>Compartir PDF de la presentació per email sense control</li>
+                <li>Discussions informals on comparteixes massa detalls</li>
+            </ul>
+            
+            <h4>Com mitigar:</h4>
+            <p>🟡 Marcar slides sensibles amb "NO FOTOGRAFIAR / CONFIDENCIAL"</p>
+            <p>🟡 Només mostrar resultats preliminars en sessions tancades/privades</p>
+            <p>🟡 NO compartir PDFs amb dades crítiques per email després del congrés</p>
+        </div>
+
+        <div class="card">
+            <h3>🟢 Risc 7: Robatori físic de dispositius</h3>
+            <p><strong>Probabilitat:</strong> BAIXA</p>
+            <p><strong>Impacte:</strong> ALT (si el dispositiu no està xifrat)</p>
+            
+            <h4>Descripció:</h4>
+            <p>Robatori/pèrdua de portàtil, USB o disc dur extern amb dades no publicades.</p>
+            
+            <h4>Escenaris típics:</h4>
+            <ul>
+                <li>Portàtil robat en congrés internacional</li>
+                <li>USB perdut en transport públic</li>
+                <li>Disc dur extern oblidat en cafeteria</li>
+            </ul>
+            
+            <h4>Solució:</h4>
+            <p>✅ Xifrar el disc complet del portàtil (BitLocker a Windows, FileVault a Mac)</p>
+            <p>✅ NO portar dades sensibles en USBs sense xifrar</p>
+            <p>✅ Còpies de seguretat xifrades al núvol com a backup</p>
+        </div>
+
+        <h2>📊 Resum: Prioritzar accions segons risc</h2>
+
+        <table>
+            <tr>
+                <th>Risc</th>
+                <th>Probabilitat</th>
+                <th>Impacte</th>
+                <th>Prioritat d'acció</th>
+            </tr>
+            <tr style="background: #fee;">
+                <td>1. Núvol sense xifrar</td>
+                <td>🔴 Molt alta</td>
+                <td>🔴 Crític</td>
+                <td><strong>🚨 URGENT (avui)</strong></td>
+            </tr>
+            <tr style="background: #fee;">
+                <td>2. Email sense xifrar</td>
+                <td>🔴 Molt alta</td>
+                <td>🔴 Alt</td>
+                <td><strong>🚨 URGENT (avui)</strong></td>
+            </tr>
+            <tr style="background: #ffd;">
+                <td>3. Eines IA sense protocol</td>
+                <td>🟠 Alta</td>
+                <td>🟠 Mitjà-Alt</td>
+                <td><strong>📅 Aquesta setmana</strong></td>
+            </tr>
+            <tr style="background: #ffd;">
+                <td>4. Ciberataques institucionals</td>
+                <td>🟠 Mitjana</td>
+                <td>🔴 Crític</td>
+                <td><strong>📅 Aquest mes</strong></td>
+            </tr>
+            <tr>
+                <td>5. Scooping revisió pars</td>
+                <td>🟡 Baixa-Mitjana</td>
+                <td>🟠 Alt</td>
+                <td>🔍 Vigilar</td>
+            </tr>
+            <tr>
+                <td>6. Filtracions congressos</td>
+                <td>🟡 Baixa-Mitjana</td>
+                <td>🟡 Mitjà</td>
+                <td>🔍 Consciència</td>
+            </tr>
+            <tr>
+                <td>7. Robatori físic</td>
+                <td>🟢 Baixa</td>
+                <td>🟠 Alt</td>
+                <td>🔍 Prevenir</td>
+            </tr>
+        </table>
+
+        <div class="alert alert-success">
+            <h3>✅ Per començar avui</h3>
+            <p><strong>En 30 minuts pots reduir el teu risc en un 80%:</strong></p>
+            <ol>
+                <li><a href="../inici/accio-urgent.html">Segueix la guia d'Acció Urgent</a></li>
+                <li>Xifra el teu arxiu més sensible amb 7-Zip</li>
+                <li>Activa 2FA a Google</li>
+            </ol>
+        </div>
+
+        <div class="nav-bottom">
+            <a href="../../index.html">← Inici</a>
+            <a href="cas-hospital-clinic.html">Cas Hospital Clínic →</a>
+        </div>
+
+        <footer>
+            <p><a href="../../index.html">🏠 Inici</a> | <a href="../inici/accio-urgent.html">🚨 Acció Urgent</a> | <a href="../eines/cursor-analisi.html">💡 Cursor</a></p>
+        </footer>
+    </div>
+</body>
+</html>
